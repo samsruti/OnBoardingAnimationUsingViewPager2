@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/intro_login_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.haikujam.assignment.samsruti.ui.intro.MainFragment"
+        android:label="Pick a language"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.haikujam.assignment.samsruti.ui.onboarding.OnBoardingFragment"
+        android:label="How does it work?"
+        tools:layout="@layout/on_boarding_fragment" >
+        <argument
+            android:name="language_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_onBoardingFragment_to_jammingFragment"
+            app:destination="@id/jammingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/jammingFragment"
+        android:name="com.haikujam.assignment.samsruti.ui.jam.JammingFragment"
+        android:label="Complete the Jam"
+        tools:layout="@layout/jamming_fragment" />
+</navigation>
